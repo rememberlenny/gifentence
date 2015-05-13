@@ -34,9 +34,7 @@
     alert('Sorry! Save is not working right now.');
   });
 
-  $( ".loading img" ).load(function() {
-    $( this ).parent().removeClass( "loading" );
-  });
+
 
   function start_search(word, i){
     mixpanel.track("Start search");
@@ -60,6 +58,9 @@
     }).done(function(data) {
       var gif = data.hash.image_original_url;
       $($('.slot')[i]).html('<img src="' + gif + '">');
+      $( ".loading img" ).load(function() {
+        $( this ).parent().removeClass( "loading" );
+      });
       $('#trigger-button').html('Giphify');
     });
   }

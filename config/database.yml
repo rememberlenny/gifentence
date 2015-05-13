@@ -12,7 +12,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: getsweet_development
+  database: gifsentence_development
   pool: 5
   username: lkbgift
   password:
@@ -23,7 +23,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: getsweet_test
+  database: gifsentence_test
   pool: 5
   username: lkbgift
   password:
@@ -31,7 +31,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: getsweet_production
+  database: gifsentence_production
   pool: 5
   username: lkbgift
   password:

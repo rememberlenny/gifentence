@@ -8,6 +8,7 @@ gem 'spring',        group: :development
 # gem 'unicorn'
 # gem 'rack-timeout'
 # gem 'sidekiq'
+gem 'giphy'
 gem 'simple_form'
 gem 'twilio-ruby'
 gem 'chronic'

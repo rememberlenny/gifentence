@@ -53,7 +53,6 @@
     window.history.pushState('gifentence', 'Gifentence: ' + sentence, '/?search=' + encodeURI(sentence));
 
     console.log(words);
-    $('#sentence').html();
     for(i = 0; i < words.length; i++){
       $('#sentence').append('<li class="slot loading">');
       search_words(words[i], i);
@@ -63,6 +62,7 @@
   }
 
   function search_words(word, i){
+    $('#sentence').html('');
     $.ajax({
       url: "/giphy/" + word
     }).done(function(data) {

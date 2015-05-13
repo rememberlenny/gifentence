@@ -45,6 +45,7 @@
 
   function start_search(){
     mixpanel.track("Start search");
+    $('#sentence').html('');
     $('#trigger-button').html('Loading...');
     var sentence = $('#sentence-field').val();
     $('#loaded-sentence').html(sentence);
@@ -62,7 +63,6 @@
   }
 
   function search_words(word, i){
-    $('#sentence').html('');
     $.ajax({
       url: "/giphy/" + word
     }).done(function(data) {

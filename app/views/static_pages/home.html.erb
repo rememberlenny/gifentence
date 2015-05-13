@@ -19,7 +19,6 @@
   $("#sentence-field").keyup(function(event){
       if(event.keyCode == 13){
         start_search();
-
       }
   });
 
@@ -27,6 +26,13 @@
     e.preventDefault();
     start_search();
   });
+
+ $('#save-button').on('click', function(e){
+    e.preventDefault();
+    mixpanel.track("Tried to save");
+    alert('Sorry! Save is not working right now.');
+  });
+
 
   function start_search(word, i){
     mixpanel.track("Start search");

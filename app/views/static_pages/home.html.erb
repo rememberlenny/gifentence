@@ -1,9 +1,8 @@
-
 <div class="row" style="text-align: center;">
   <h3>Turn your sentence into gifs</h3>
   <div class="col-lg-6 text-center">
     <div class="form-group text-center">
-      <input id="sentence-field" type="text" style="width:50%" value="" placeholder="Type your sentence" class="form-control">
+      <input id="sentence-field" type="text" style="width:50%" value="<%= params[:search] %>" placeholder="Type your sentence" class="form-control">
     </div>
   </div>
   <div class="col-lg-6">
@@ -17,6 +16,14 @@
 </div>
 
 <script type="text/javascript">
+  $(document).ready(function(){
+    var hash = decodeURI(location.hash);
+    var sentence = $('#sentence-field').val();
+    if(sentence != ''){
+      start_search();
+    }
+  });
+
   $("#sentence-field").keyup(function(event){
       if(event.keyCode == 13){
         start_search();
@@ -31,17 +38,18 @@
  $('#save-button').on('click', function(e){
     e.preventDefault();
     mixpanel.track("Tried to save");
-    alert('Sorry! Save is not working right now.');
+    alert('Copy and paste the URL to share. Save isnt up yet.');
   });
 
-
-
-  function start_search(word, i){
+  function start_search(){
     mixpanel.track("Start search");
     $('#trigger-button').html('Loading...');
     var sentence = $('#sentence-field').val();
     $('#loaded-sentence').html(sentence);
     var words = sentence.split(' ');
+
+    window.history.pushState('gifentence', 'Gifentence: ' + sentence, '/?search=' + encodeURI(sentence));
+
     console.log(words);
     $('#sentence').html();
     for(i = 0; i < words.length; i++){

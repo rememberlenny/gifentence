@@ -33,6 +33,9 @@
     alert('Sorry! Save is not working right now.');
   });
 
+  $( ".loading img" ).load(function() {
+    $( this ).removeClass( "loading" );
+  });
 
   function start_search(word, i){
     mixpanel.track("Start search");
@@ -42,7 +45,7 @@
     console.log(words);
     $('#sentence').html();
     for(i = 0; i < words.length; i++){
-      $('#sentence').append('<li class="slot">');
+      $('#sentence').append('<li class="slot loading">');
       search_words(words[i], i);
     }
     mixpanel.track("Searched " + words.length + " words.");

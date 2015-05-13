@@ -14,7 +14,7 @@ gem 'twilio-ruby'
 gem 'chronic'
 gem 'ransack'
 gem 'mixpanel-ruby'
-gem 'rollbar', '~> 1.4.4'
+
 
 # Frontend
 gem 'acts-as-taggable-on', '~> 3.4'
@@ -25,7 +25,7 @@ gem 'turbolinks'
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
-
+gem 'rollbar', '~> 1.5.1'
 # # Auth
 gem 'devise'
 gem 'devise_uid'

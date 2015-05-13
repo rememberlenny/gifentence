@@ -19,6 +19,7 @@
   $("#sentence-field").keyup(function(event){
       if(event.keyCode == 13){
         start_search();
+
       }
   });
 
@@ -28,12 +29,14 @@
   });
 
   function start_search(word, i){
+    mixpanel.track("Start search");
     $('#trigger-button').html('Loading...');
     var sentence = $('#sentence-field').val();
     var words = sentence.split(' ');
     console.log(words);
     $('#sentence').html();
     for(i = 0; i < words.length; i++){
+      mixpanel.track("Searched " + words.length + " words.");
       $('#sentence').append('<li class="slot">');
       search_words(words[i], i);
     }

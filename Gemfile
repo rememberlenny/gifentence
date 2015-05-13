@@ -21,6 +21,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'foundation-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'

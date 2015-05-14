@@ -1,8 +1,8 @@
 <div class="row" style="text-align: center;">
   <h3>Turn your sentence into gifs</h3>
   <div class="col-lg-6 text-center">
-    <div class="form-group text-center">
-      <input id="sentence-field" type="text" style="width:50%" value="<%= params[:search].html_safe %>" placeholder="Type your sentence" class="form-control">
+    <div class="form-group text-center">)
+      <input id="sentence-field" type="text" style="width:50%" value="<%= strip_tags(params[:search].html_safe) %>" placeholder="Type your sentence" class="form-control">
     </div>
   </div>
   <div class="col-lg-6">
